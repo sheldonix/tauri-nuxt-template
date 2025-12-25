@@ -14,7 +14,6 @@
     "@nuxt/eslint": "1.12.1",
     "@nuxtjs/tailwindcss": "7.0.0-beta.1",
     "@tauri-apps/api": "^2.9.1",
-    "@vueuse/core": "^14.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "eslint": "^9.39.2",

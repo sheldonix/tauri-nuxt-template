@@ -1,124 +1,61 @@
 <template>
-  <div class="container mx-auto max-w-5xl px-6 py-16">
-    <!-- Hero Section -->
-    <section class="text-center mb-20">
-      <h2 class="text-5xl font-bold mb-6">
-        Beautiful UI Components for Nuxt 4
-      </h2>
-      <p class="text-muted-foreground text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-        A starter template built with Nuxt 4, shadcn-vue, and Tailwind CSS 4
-      </p>
-      <div class="flex gap-4 justify-center">
-        <Button as-child size="lg">
-          <NuxtLink to="https://www.shadcn-vue.com/docs/components" target="_blank">
-            Explore Components
-          </NuxtLink>
-        </Button>
-        <Button as-child variant="outline" size="lg">
-          <NuxtLink to="https://github.com/sheldonix/tauri-nuxt-template" target="_blank">
-            View on GitHub
-          </NuxtLink>
+  <div class="flex h-screen flex-col items-center justify-center p-6">
+    <div class="w-full max-w-md space-y-4">
+      <div class="text-center mb-8">
+        <div class="flex justify-center mb-4">
+          <img src="/tauri-icon.png" alt="Tauri" class="w-16 h-16" />
+        </div>
+        <h1 class="text-2xl font-bold">Tauri Nuxt Template</h1>
+        <div class="flex flex-wrap justify-center gap-2 mt-3">
+        <span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary">Tauri 2</span>
+        <span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary">Nuxt 4</span>
+        <span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary">shadcn-vue</span>
+        <span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary">Tailwind CSS 4</span>
+      </div>
+      </div>
+
+      <div class="flex gap-2">
+        <Input
+          v-model="message"
+          placeholder="Enter your name..."
+          @keyup.enter="greet"
+        />
+        <Button @click="greet" :disabled="loading">
+          <span v-if="!loading">Go</span>
+          <svg v-else class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+          </svg>
         </Button>
       </div>
-    </section>
 
-    <!-- Components Showcase -->
-    <section class="mb-20">
-      <h3 class="text-3xl font-bold mb-8 text-center">Component Showcase</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Button Card -->
-        <Card>
-          <CardHeader>
-            <CardTitle>Button</CardTitle>
-            <CardDescription>
-              Multiple variants and sizes
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div class="flex flex-wrap gap-2">
-              <Button>Default</Button>
-              <Button variant="secondary">Secondary</Button>
-              <Button variant="outline">Outline</Button>
-              <Button variant="ghost">Ghost</Button>
-              <Button variant="link">Link</Button>
-              <Button variant="destructive">Destructive</Button>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <div class="flex gap-2">
-              <Button size="sm">Small</Button>
-              <Button size="default">Default</Button>
-              <Button size="lg">Large</Button>
-            </div>
-          </CardFooter>
-        </Card>
-
-        <!-- Input Card -->
-        <Card>
-          <CardHeader>
-            <CardTitle>Input</CardTitle>
-            <CardDescription>
-              Text input field with styling
-            </CardDescription>
-          </CardHeader>
-          <CardContent class="space-y-3">
-            <Input type="text" placeholder="Enter your name" />
-            <Input type="email" placeholder="email@example.com" />
-            <Input type="password" placeholder="Password" />
-          </CardContent>
-        </Card>
-
-        <!-- Features Card -->
-        <Card>
-          <CardHeader>
-            <CardTitle>Features</CardTitle>
-            <CardDescription>
-              What's included in this template
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-center gap-2">
-                <span class="text-primary">✓</span> Nuxt.js 4
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-primary">✓</span> shadcn-vue components
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-primary">✓</span> Tailwind CSS 4
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-primary">✓</span> TypeScript support
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-primary">✓</span> Dark mode ready
-              </li>
-            </ul>
-          </CardContent>
-          <CardFooter>
-            <Button variant="outline" class="w-full">
-              Learn More
-            </Button>
-          </CardFooter>
-        </Card>
+      <div :class="['p-4 rounded-lg text-center font-mono text-sm min-h-[60px] flex items-center justify-center', response && 'bg-muted']">
+        {{ response }}
       </div>
-    </section>
-
-    <!-- Quick Start -->
-    <section>
-      <Card>
-        <CardHeader>
-          <CardTitle>Quick Start</CardTitle>
-          <CardDescription>
-            Add more shadcn-vue components to your project
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div class="bg-muted p-4 rounded-md font-mono text-sm">
-            <code class="text-primary">pnpm dlx shadcn-vue@latest add [component]</code>
-          </div>
-        </CardContent>
-      </Card>
-    </section>
+    </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { invoke } from '@tauri-apps/api/core'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+
+const message = ref('')
+const response = ref('')
+const loading = ref(false)
+
+async function greet() {
+  if (!message.value.trim()) return
+
+  loading.value = true
+  try {
+    const result = await invoke<string>('greet', { name: message.value })
+    response.value = result
+  } catch (error) {
+    response.value = `Error: ${error}`
+  } finally {
+    loading.value = false
+  }
+}
+</script>
