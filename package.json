@@ -1,7 +1,8 @@
 {
-  "name": "nuxt-shadcn-template",
+  "name": "tauri-nuxt-template",
   "type": "module",
   "private": true,
+  "version": "0.1.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

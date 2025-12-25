@@ -15,7 +15,7 @@
           </NuxtLink>
         </Button>
         <Button as-child variant="outline" size="lg">
-          <NuxtLink to="https://github.com/sheldonix/nuxt-shadcn-template" target="_blank">
+          <NuxtLink to="https://github.com/sheldonix/tauri-nuxt-template" target="_blank">
             View on GitHub
           </NuxtLink>
         </Button>

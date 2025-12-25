@@ -2,19 +2,19 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "tauri-nuxt-template",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.app.tauri-nuxt-template",
   "build": {
     "frontendDist": "../dist",
-    "devUrl": "http://localhost:3000",
+    "devUrl": "http://localhost:1420",
     "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build"
+    "beforeBuildCommand": "pnpm generate"
   },
   "app": {
     "windows": [
       {
         "title": "tauri-nuxt-template",
-        "width": 800,
-        "height": 600,
+        "width": 1024,
+        "height": 768,
         "resizable": true,
         "fullscreen": false
       }
