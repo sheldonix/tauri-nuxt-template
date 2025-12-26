@@ -26,17 +26,18 @@ This template provides a solid foundation for building modern cross-platform des
 - **Tailwind CSS 4** - Utility-first CSS with the latest v4 features
 - **Theme Switcher** - Dark/light theme toggle with localStorage persistence
 
-## Quick Start
+## Getting Started
 
 ### Prerequisites
 
 - **Node.js** 18+ and **pnpm**
 - **Rust** (latest stable)
 
-### Use as Template
+### Create Project
+
+Click the **"Use this template"** button on GitHub to create your own repository, or clone it manually:
 
 ```bash
-# Clone the repository
 git clone https://github.com/sheldonix/tauri-nuxt-template.git my-project
 cd my-project
 
