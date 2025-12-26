@@ -2,7 +2,7 @@
 
 # Tauri Nuxt Template
 
-**A modern cross-platform desktop application starter template built with Tauri 2, Nuxt 4, shadcn-vue, and Tailwind CSS 4**
+**A modern cross-platform desktop application starter template**
 
 [![Tauri](https://img.shields.io/badge/Tauri-2.9-FFC131?logo=tauri&logoColor=000000)](https://tauri.app)
 [![Nuxt](https://img.shields.io/badge/Nuxt-4.2.2-00DC82?logo=nuxt.js)](https://nuxt.com)
