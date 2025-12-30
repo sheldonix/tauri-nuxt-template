@@ -1,0 +1,37 @@
+$schema: https://raw.githubusercontent.com/sheldonix/tpull/v1.0.0/schema.json
+tpull_version: 1.0.0
+name: tauri-nuxt-template
+template_repo: https://github.com/sheldonix/tauri-nuxt-template
+prompts:
+  - var: project_name
+    type: input
+    message: Project name?
+    default: my-tauri-app
+    required: true
+    validate: ''
+replacements:
+  - files:
+      - package.json
+    pattern: '/("name"\s*:\s*")[^"]*(")/'
+    replace: '$1{{project_name}}$2'
+  - files:
+      - tauri.conf.json
+    pattern: '/("productName"\s*:\s*")[^"]*(")/'
+    replace: '$1{{project_name}}$2'
+  - files:
+      - tauri.conf.json
+    pattern: '/("identifier"\s*:\s*"com.app.)[^"]*(")/'
+    replace: '$1{{project_name}}$2'
+  - files:
+      - Cargo.toml
+    pattern: '/(^name\s*=\s*")tauri-nuxt-template(")/m'
+    replace: '$1{{project_name}}$2'
+  - files:
+      - Cargo.toml
+    pattern: '/(^name\s*=\s*")tauri_nuxt_template(_lib")/m'
+    replace: '$1{{project_name}}$2'
+    transform: snake
+  - files:
+      - Cargo.lock
+    pattern: '/(^name\s*=\s*")tauri-nuxt-template(")/m'
+    replace: '$1{{project_name}}$2'
