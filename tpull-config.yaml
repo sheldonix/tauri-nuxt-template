@@ -1,5 +1,5 @@
-$schema: https://raw.githubusercontent.com/sheldonix/tpull/v1.1.0/schema.json
-tpull_version: 1.1.0
+$schema: https://raw.githubusercontent.com/sheldonix/tpull/v1.1.6/schema.json
+tpull_version: 1.1.6
 name: tauri-nuxt-template
 template_repo: https://github.com/sheldonix/tauri-nuxt-template
 prompts:
@@ -19,7 +19,7 @@ replacements:
     replace: '$1{{project_name}}'
   - files:
       - tpull-config.yaml
-    pattern: '/)tauri-nuxt-template/g'
+    pattern: '/\)tauri-nuxt-template/g'
     replace: '){{project_name}}'
   - files:
       - src-tauri/tauri.conf.json
