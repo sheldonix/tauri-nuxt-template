@@ -1,5 +1,5 @@
-$schema: https://raw.githubusercontent.com/sheldonix/tpull/v1.0.0/schema.json
-tpull_version: 1.0.0
+$schema: https://raw.githubusercontent.com/sheldonix/tpull/v1.1.0/schema.json
+tpull_version: 1.1.0
 name: tauri-nuxt-template
 template_repo: https://github.com/sheldonix/tauri-nuxt-template
 prompts:
@@ -8,12 +8,19 @@ prompts:
     message: Project name?
     default: my-tauri-app
     required: true
-    validate: ''
 replacements:
   - files:
       - package.json
     pattern: '/("name"\s*:\s*")[^"]*(")/'
     replace: '$1{{project_name}}$2'
+  - files:
+      - tpull-config.yaml
+    pattern: '/(^name:\s*)tauri-nuxt-template/m'
+    replace: '$1{{project_name}}'
+  - files:
+      - tpull-config.yaml
+    pattern: '/)tauri-nuxt-template/g'
+    replace: '){{project_name}}'
   - files:
       - src-tauri/tauri.conf.json
     pattern: '/("productName"\s*:\s*")[^"]*(")/'
@@ -22,6 +29,7 @@ replacements:
       - src-tauri/tauri.conf.json
     pattern: '/("identifier"\s*:\s*"com.app.)[^"]*(")/'
     replace: '$1{{project_name}}$2'
+    transform: kebab
   - files:
       - src-tauri/Cargo.toml
     pattern: '/(^name\s*=\s*")tauri-nuxt-template(")/m'
