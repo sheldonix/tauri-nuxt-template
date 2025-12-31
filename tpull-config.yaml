@@ -15,23 +15,23 @@ replacements:
     pattern: '/("name"\s*:\s*")[^"]*(")/'
     replace: '$1{{project_name}}$2'
   - files:
-      - tauri.conf.json
+      - src-tauri/tauri.conf.json
     pattern: '/("productName"\s*:\s*")[^"]*(")/'
     replace: '$1{{project_name}}$2'
   - files:
-      - tauri.conf.json
+      - src-tauri/tauri.conf.json
     pattern: '/("identifier"\s*:\s*"com.app.)[^"]*(")/'
     replace: '$1{{project_name}}$2'
   - files:
-      - Cargo.toml
+      - src-tauri/Cargo.toml
     pattern: '/(^name\s*=\s*")tauri-nuxt-template(")/m'
     replace: '$1{{project_name}}$2'
   - files:
-      - Cargo.toml
+      - src-tauri/Cargo.toml
     pattern: '/(^name\s*=\s*")tauri_nuxt_template(_lib")/m'
     replace: '$1{{project_name}}$2'
     transform: snake
   - files:
-      - Cargo.lock
+      - src-tauri/Cargo.lock
     pattern: '/(^name\s*=\s*")tauri-nuxt-template(")/m'
     replace: '$1{{project_name}}$2'
