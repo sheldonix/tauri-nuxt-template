@@ -30,8 +30,8 @@ This template provides a solid foundation for building modern cross-platform des
 
 ### Prerequisites
 
-- **Node.js** >=20.19.0
-- **Rust** (latest stable)
+- Node.js >= 20.19.0
+- Rust (latest stable)
 
 ### Create Project
 
@@ -43,7 +43,7 @@ npx -y tpull@latest sheldonix/tauri-nuxt-template@latest my-tauri-app
 
 Other ways to use this template:
 
-- Use GitHub template: Click the **"Use this template"** button on GitHub to create your own repository.
+- Click the **"Use this template"** button on GitHub to create your own repository.
 - Alternatively, clone manually:
 
 ```bash
