@@ -30,16 +30,25 @@ This template provides a solid foundation for building modern cross-platform des
 
 ### Prerequisites
 
-- **Node.js** 18+ and **pnpm**
+- **Node.js** >=20.19.0
 - **Rust** (latest stable)
 
 ### Create Project
 
-Click the **"Use this template"** button on GitHub to create your own repository, or clone it manually:
+Use `npx` with [tpull](https://www.npmjs.com/package/tpull) to scaffold a new project:
 
 ```bash
-git clone https://github.com/sheldonix/tauri-nuxt-template.git my-project
-cd my-project
+npx -y tpull@latest sheldonix/tauri-nuxt-template@latest my-tauri-app
+```
+
+Other ways to use this template:
+
+- Use GitHub template: Click the **"Use this template"** button on GitHub to create your own repository.
+- Alternatively, clone manually:
+
+```bash
+git clone https://github.com/sheldonix/tauri-nuxt-template.git my-tauri-app
+cd my-tauri-app
 
 # Install dependencies
 pnpm install
@@ -117,7 +126,7 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
-[![GitHub](https://img.shields.io/badge/Github-sheldonix%2Ftauri--nuxt--template-181717?logo=github)](https://github.com/sheldonix/tauri-nuxt-template)
+[![GitHub](https://img.shields.io/badge/Github-sheldonix%2Ftauri--nuxt--template-green?logo=github)](https://github.com/sheldonix/tauri-nuxt-template)
 
 ## License
 

@@ -1,5 +1,5 @@
-$schema: https://raw.githubusercontent.com/sheldonix/tpull/v1.1.6/schema.json
-tpull_version: 1.1.6
+$schema: https://raw.githubusercontent.com/sheldonix/tpull/v1.2.0/schema.json
+tpull_version: 1.2.0
 name: tauri-nuxt-template
 template_repo: https://github.com/sheldonix/tauri-nuxt-template
 prompts:
